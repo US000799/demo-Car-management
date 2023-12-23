@@ -1,0 +1,80 @@
+.container-fluid{
+    
+    width: 100%;
+    height: 160%;  
+}
+.search{
+    width: 84%;
+    height: 40px;
+    padding: 20px;
+    margin-left: 8%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+h1{
+    text-align: center;  
+    font-size: 40px; 
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+h2{
+    color: white;
+    text-align: center; 
+}
+
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input{
+    border-radius: 20px;
+    
+}
+label{
+    width: 300px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.alert{
+    width: 40%;
+    margin: 0px auto;  
+}
+.close{
+    left: 90%;
+}
+form{
+    
+    width: 70%;
+    margin-left: auto;
+}
+
+.table2{
+    margin: auto;
+}
+.table2 th {
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgb(238, 236, 236);
+}
+.table2 td {
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 5px;
+    background-color: rgb(238, 236, 236);
+}
+.btn-primary{
+    margin-top: 15px;
+    border-radius: 20px;
+
+}
+.btn-danger{
+    margin-left: 5px;
+    border-radius: 20px;
+ 
+}
+

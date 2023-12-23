@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <mat-card class="example-card">
+      <mat-card-header class="example-card-header">
+        <div mat-card-avatar class="example-header-image"></div> <br> <br>
+        <mat-card-title class="example-header-title">ABC Bank</mat-card-title>
+      </mat-card-header>
+      
+    
+      <div class="example-container">
+        <mat-form-field floatLabel="always">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <br>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <p class="regi"><a routerLink="/registration">Click here!</a>  To Register.</p>
+      
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" routerLink="/home">Submit</button>
+        </div>
+      </section>
+
+    </mat-card>
+  </div>
+  
+  
+  
+

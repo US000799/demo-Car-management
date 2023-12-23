@@ -1,0 +1,26 @@
+*{
+    top: 0;
+    left: 0;
+  }
+  
+  .example-spacer {
+      flex: 1 1 auto;
+    }
+  img{
+    width: 45px;
+    margin-top: 8px; 
+  }
+  
+  span{
+    margin-right: 20px;
+  }
+  span:hover{
+    cursor: pointer;
+  }
+  button{
+    background-color: white;
+  }
+  button p{
+    color: blueviolet;
+    padding-top: 10px;
+  }

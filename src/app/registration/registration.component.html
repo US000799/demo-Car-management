@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <br><br>
+    <form class="example-form">
+
+        <section class="regi-form">
+            <img src="\assets\logo.png" alt="logo">
+            <h3>ABC Bank</h3> <br>
+
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>First name</mat-label>
+                            <input matInput placeholder="Ex. Johnny">
+                        </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>Last Name </mat-label>
+                            <input matInput placeholder="Ex. Walker">
+                        </mat-form-field></td>
+                </tr>
+                <tr>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>Age</mat-label>
+                            <input matInput>
+                        </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>Contact No. </mat-label>
+                            <input matInput placeholder="Ex. 23478 XXXXX">
+                        </mat-form-field></td>
+                </tr>
+                
+            </table>
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td><mat-form-field class="field1">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Ex. xyz@gmail.com">
+                    </mat-form-field> </td>
+                </tr>
+            </table>
+    
+            <p>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput placeholder="Ex. Pushpanjali Apartment"></textarea>
+                </mat-form-field>
+            </p>
+    
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="Ex. Nagpur">
+                        </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>State</mat-label>
+                            <input matInput placeholder="Ex. Maharashtra">
+                        </mat-form-field></td>
+                    
+                </tr>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput #postalCode maxlength="5" placeholder="Ex. 94105">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="Ex. India" >
+                </mat-form-field></td>
+                <tr>
+    
+                </tr>
+            </table>
+            
+            <p>Already Registered!<a routerLink="/login"> Click here </a> To Login</p> <br>
+            <section>
+                <div class="example-button-row">
+                  <button mat-raised-button color="primary" routerLink="/home">Register</button>
+                </div>
+            </section>
+        </section>
+
+    </form> <br><br>
+
+</div>

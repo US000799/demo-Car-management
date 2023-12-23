@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+
+
+    <br><br><br><br>
+    <h1>Part Details</h1>
+    <input type="text" class="search" placeholder="Search" [(ngModel)]="searchText">
+    <table class="table2" >
+        <thead >
+            <tr>
+                <th>Part Name</th>
+                <th>Warranty</th>
+                <th>MRP</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of array | search:searchText; let i = index">
+            <tr>
+                <td>{{item.partName}}</td>
+                <td>{{item.warranty}}</td>
+                <td>{{item.mrp}}</td>
+                <td>{{item.quantity}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="edit(i,item)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="alert alert-success alert-dismissible" *ngIf="alert">
+        <strong>Added Successfully.</strong>
+        <button type="button" class="close" (click)="cross()" data-dismiss="alert">X</button>
+    </div> <br>
+    <br> <br> <br>
+    <h1>Add New Part</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="partName">Part Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Part Name" [(ngModel)]="partName" name="partName" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="warranty">Warranty</label>
+                        <input type="number" class="form-control" placeholder="Enter Warranty" [(ngModel)]="warranty" name="warranty" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+            
+            
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="mrp">MRP</label>
+                        <input type="number" class="form-control" placeholder="Enter MRP" [(ngModel)]="mrp"
+                            name="mrp" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" placeholder="Enter Quantity" [(ngModel)]="quantity"
+                            name="quantity" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        
+        
+        <button type="submit" class="btn btn-primary" (click)="submit()" *ngIf="submitButton"
+            [disabled]="partName=='' || warranty =='' || mrp =='' || quantity =='' ">
+            Submit
+        </button>
+
+        <button type="button" class="btn btn-info" (click)="update()" *ngIf="updateButton"
+            [ngStyle]="{'Font-size.px':20, 'color':'black', 'Font-width':'solid-bold'}">Update</button>
+    </form>
+
+</div>
+<app-footer></app-footer>

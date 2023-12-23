@@ -1,0 +1,115 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    
+    <br><br><br><br>
+    
+    <h1>Billing Details</h1>
+    <input type="text" class="search" placeholder="Search" [(ngModel)]="searchText">
+    <table class="table2" >
+        <thead >
+            <tr>
+                <th>Car Name</th>
+                <th>Brand</th>
+                <th>Customer Name</th>
+                <th>Contact</th>
+                <th>Seats</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of array | search:searchText; let i = index">
+            <tr>
+                <td>{{item.carname}}</td>
+                <td>{{item.brand}}</td>
+                <td>{{item.customername}}</td>
+                <td>{{item.contact}}</td>
+                <td>{{item.seats}}</td>
+                <td>{{item.price}}</td>
+                
+                
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="edit(i,item)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="alert alert-success alert-dismissible" *ngIf="alert">
+        <strong>Added Successfully.</strong>
+        <button type="button" class="close" (click)="cross()" data-dismiss="alert">X</button>
+    </div> <br>
+    <br> <br> <br>
+    <h1>Make New Bill</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="carname">Car Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Car Name" [(ngModel)]="carname" name="carname" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input type="text" class="form-control" placeholder="Enter Brand Name" [(ngModel)]="brand" name="brand" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+            
+            
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="customername">Customer Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Customer Name" [(ngModel)]="customername"
+                            name="customername" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="number" class="form-control" placeholder="Enter Contact " [(ngModel)]="contact"
+                            name="contact" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="seats">Seats</label>
+                        <input type="number" class="form-control" placeholder="Enter Seats" [(ngModel)]="seats"
+                            name="seats" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" placeholder="Enter Price" [(ngModel)]="price"
+                            name="price" />
+                    </div>
+                </td>
+                
+            </tr>
+        </table>
+        
+        
+        <button type="submit" class="btn btn-primary" (click)="submit()" *ngIf="submitButton"
+            [disabled]="carname =='' || brand =='' || customername =='' || contact =='' || seats =='' || price =='' ">
+            Submit
+        </button>
+
+        <button type="button" class="btn btn-info" (click)="update()" *ngIf="updateButton"
+            [ngStyle]="{'Font-size.px':20, 'color':'black', 'Font-width':'solid-bold'}">Update</button>
+    </form>
+
+</div>
+
+<app-footer></app-footer>

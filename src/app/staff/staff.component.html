@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <br><br><br><br>
+    <h1>Staff Details</h1>
+    <input type="text" class="search" placeholder="Search" [(ngModel)]="searchText">
+    <table class="table2" >
+        <thead >
+            <tr>
+                <th>Staff Name</th>
+                <th>Contact No.</th>
+                <th>Address</th>
+                <th>Designation</th>
+                <th>Shift</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of array | search:searchText; let i = index">
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.contact}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.designation}}</td>
+                <td>{{item.shift}}</td>
+                <td>{{item.salary}}</td>
+                
+                
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="edit(i,item)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="alert alert-success alert-dismissible" *ngIf="alert">
+        <strong>Added Successfully.</strong>
+        <button type="button" class="close" (click)="cross()" data-dismiss="alert">X</button>
+    </div> <br>
+    <br> <br> <br>
+    <h1>Add Staff</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="name">Staff Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Name" [(ngModel)]="name" name="name" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="contact">Contact No.</label>
+                        <input type="number" class="form-control" placeholder="Enter Your Contact" [(ngModel)]="contact" name="contact" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+            
+            
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Address" [(ngModel)]="address"
+                            name="address" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Designation" [(ngModel)]="designation"
+                            name="designation" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="shift">Shift</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Shift" [(ngModel)]="shift"
+                            name="shift" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="salary">Salary</label>
+                        <input type="number" class="form-control" placeholder="Enter Your Salary" [(ngModel)]="salary"
+                            name="salary" />
+                    </div>
+                </td>
+                
+            </tr>
+        </table>
+        
+        
+        <button type="submit" class="btn btn-primary" (click)="submit()" *ngIf="submitButton"
+            [disabled]="name =='' || contact =='' || address =='' || designation == '' || shift =='' || salary=='' ">
+            Submit
+        </button>
+
+        <button type="button" class="btn btn-info" (click)="update()" *ngIf="updateButton"
+            [ngStyle]="{'Font-size.px':20, 'color':'black', 'Font-width':'solid-bold'}">Update</button>
+    </form>
+    
+</div>
+<app-footer></app-footer>
